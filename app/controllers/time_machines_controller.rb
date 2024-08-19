@@ -1,5 +1,7 @@
 class TimeMachinesController < ApplicationController
-
+  def index
+    @machines = TimeMachine.all
+  end
   def new
     @machine = TimeMachine.new
   end
