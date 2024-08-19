@@ -8,6 +8,7 @@ class TimeMachinesController < ApplicationController
   end
 
   def show
+    @not_owner = @machine.owner != current_user
   end
 
   def create
