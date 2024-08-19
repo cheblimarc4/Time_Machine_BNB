@@ -8,7 +8,13 @@ class TimeMachinesController < ApplicationController
 
   def create
     @user = current_user
-    raise
+    @machine = TimeMachine.new(timemachine_params)
+    @machine.owner = @user
+    if @machine.save
+      redirect_to root_path
+    else
+      render new, status: :unprocessable_entity
+    end
   end
   private
 
