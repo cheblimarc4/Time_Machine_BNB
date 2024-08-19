@@ -1,5 +1,7 @@
 class TimeMachinesController < ApplicationController
-
+  def index
+    @machines = TimeMachine.all
+  end
   def new
     @machine = TimeMachine.new
   end
@@ -8,7 +10,6 @@ class TimeMachinesController < ApplicationController
     @user = current_user
     raise
   end
-
   private
 
   def timemachine_params
