@@ -10,7 +10,6 @@ class TimeMachinesController < ApplicationController
     @user = current_user
     raise
   end
-
   private
 
   def timemachine_params
