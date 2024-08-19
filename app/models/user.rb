@@ -2,7 +2,6 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
  # A user can own many time machines.
  has_many :owned_time_machines, class_name: 'TimeMachine', foreign_key: 'user_id'
-
  # A user can have many bookings.
  has_many :bookings
 

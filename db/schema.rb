@@ -10,19 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_19_114728) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_19_124819) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.bigint "time_machine_id", null: false
     t.date "start_date"
     t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "buyer_id"
     t.index ["time_machine_id"], name: "index_bookings_on_time_machine_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "time_machines", force: :cascade do |t|
@@ -52,6 +51,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_19_114728) do
   end
 
   add_foreign_key "bookings", "time_machines"
-  add_foreign_key "bookings", "users"
+  add_foreign_key "bookings", "users", column: "buyer_id"
   add_foreign_key "time_machines", "users"
 end

@@ -1,3 +1,34 @@
 .fit-image {
   background-size: 100%;
 }
+
+
+.background-purple {
+  background-color: #532D84;
+}
+
+.background-lightpurple {
+  background-color: rgb(175, 119, 213);
+}
+
+
+.button-spacing {
+  letter-spacing: 3px;
+  font-family: monospace;
+}
+
+.machine-button {
+  transition: all 0.1s ease-in-out;
+}
+.machine-button:hover {
+  transform: scale(1.05);
+  background-color:  rgba(175, 119, 213, 0.5);
+}
+
+.form-box-shadow{
+  box-shadow: .05px .05px 5px #FFFFFF;
+}
+
+.form-border-color {
+  border: 2px solid rgba(175, 119, 213, 0.5);
+}
