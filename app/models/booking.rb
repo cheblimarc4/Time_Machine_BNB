@@ -1,4 +1,7 @@
 class Booking < ApplicationRecord
-  belongs_to :user
-  belongs_to :time_machine
+   # A booking belongs to a user.
+   belongs_to :user
+
+   # A booking belongs to a time machine.
+   belongs_to :time_machine
 end
