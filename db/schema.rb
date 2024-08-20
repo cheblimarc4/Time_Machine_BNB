@@ -51,6 +51,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_19_124819) do
   end
 
   add_foreign_key "bookings", "time_machines"
+<<<<<<< Updated upstream
+=======
+  add_foreign_key "bookings", "users"
+>>>>>>> Stashed changes
   add_foreign_key "bookings", "users", column: "buyer_id"
   add_foreign_key "time_machines", "users"
 end

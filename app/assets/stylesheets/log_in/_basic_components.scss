@@ -20,6 +20,8 @@
 }
 
 .tm-log-in-txt {
+  position: relative;
+  z-index: 1; /* Stack above the video */
   color: #810CA8; /* Text color */
   max-width: 400px; /* Set a maximum width for the container */
   min-height: 450px;
@@ -45,4 +47,24 @@
     border-color: #810CA8;
     border-radius: 70px;
   }
+}
+
+.background-container {
+  position: relative; /* Ensure the video container is correctly positioned */
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Hide overflow */
+}
+
+#bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1; /* Ensure the video is behind the content */
+  transform: translate(-50%, -50%);
+  // filter: opacity(0.5); /* Set opacity for the video */
 }
