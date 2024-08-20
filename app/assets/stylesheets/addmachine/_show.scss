@@ -1,0 +1,17 @@
+.show-card-image {
+  width: 45rem;
+  height: 15rem;
+  object-fit: cover;
+}
+
+.purple-button {
+  padding: 3px 50px;
+  background-color: $purple;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.purple-button:hover{
+  background-color: rgba($purple, 0.2);
+}

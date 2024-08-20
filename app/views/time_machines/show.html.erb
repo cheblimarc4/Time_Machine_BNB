@@ -1,9 +1,14 @@
-<%= @machine.name %>
-<%= @machine.owner.first_name %>
-<%= @machine.price %>
-<%= @machine.speed %>
-<%= @machine.comfort %>
-<%= @machine.size %>
-<% if @not_owner%>
-  <%= link_to "rent", new_time_machine_booking_path(@machine)%>
-<%end%>
+<div class="fit-image d-flex justify-content-center align-items-center" style="background-image: radial-gradient(rgba(50, 50, 50, .1), rgba(10, 10, 10, 1)), url(<%= image_path 'galaxy.png'%>); min-height: 100vh">
+  <div class="px-5 rounded-5 text-white fs-5 form-box-shadow d-flex align-items-center flex-column" style="">
+    <h2 class="fw-bolder my-3"><%=@machine.name%></h2>
+    <img class="show-card-image" src="https://images.unsplash.com/photo-1635672992730-75d116f94971?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+    <div class="text-center background-lightgradientpurple text-darkpurple w-100 mt-3 rounded-5">
+      <p>Speed: <%= @machine.speed || "Not Specified" %></p>
+      <p>Comfort: <%= @machine.comfort || "Not Specified" %></p>
+      <p>Size: <%= @machine.size || "Not Specified" %></p>
+    </div>
+      <div class="my-3">
+        <%=link_to "Rent", time_machines_path, class:"purple-button"%>
+      </div>
+  </div>
+</div>
