@@ -4,4 +4,6 @@
 <%= @machine.speed %>
 <%= @machine.comfort %>
 <%= @machine.size %>
-<%= link_to "rent", new_time_machine_booking_path(@machine)%>
+<% if @not_owner%>
+  <%= link_to "rent", new_time_machine_booking_path(@machine)%>
+<%end%>
