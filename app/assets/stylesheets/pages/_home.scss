@@ -1,1 +1,55 @@
 // Specific CSS for your home-page
+/* Banner styles */
+.banner {
+  background: linear-gradient(135deg, #DDA8F3, #B89DD4);
+  color: #1E1E1E;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+}
+.wave-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+.banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.banner h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.banner .highlight {
+  color: #2F2F2F;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #4A4A4A;
+}
+
+.cta-button {
+  background-color: #1E1E1E;
+  color: #FFFFFF;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background-color: #333333;
+}
