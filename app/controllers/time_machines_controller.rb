@@ -1,9 +1,13 @@
 class TimeMachinesController < ApplicationController
+  before_action :set_machine, only: [:show]
   def index
     @machines = TimeMachine.all
   end
   def new
     @machine = TimeMachine.new
+  end
+
+  def show
   end
 
   def create
@@ -17,6 +21,10 @@ class TimeMachinesController < ApplicationController
     end
   end
   private
+
+  def set_machine
+    @machine = TimeMachine.find(params[:id]);
+  end
 
   def timemachine_params
     params.require(:time_machine).permit(:name, :size, :speed, :comfort)

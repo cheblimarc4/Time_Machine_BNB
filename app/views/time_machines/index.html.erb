@@ -8,10 +8,8 @@
       <div class="card-body">
         <h5 class="card-title"><%= machine.name.upcase %></h5>
         <p class="card-text">This time machine will take you to the future!</p>
-        <a href="#" class="btn btn-primary">More Information</a>
+        <%= link_to "More Information", time_machine_path(machine), class:"btn btn-primary" %>
       </div>
     </div>
   <% end %>
 </div>
-
-
