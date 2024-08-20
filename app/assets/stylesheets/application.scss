@@ -15,6 +15,10 @@
 // Adding Styles to Time Machine Form
 
 @import "addmachine/index";
-body {
-  font-family: MMC;
+
+@font-face {
+  font-family: 'MMC';
+  src: asset-url('fonts/MCC-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
