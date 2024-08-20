@@ -11,7 +11,9 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
+    <% unless (params[:controller] == "time_machines" && params[:action] == "new" ) %>
+      <%= render "shared/navbar" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
