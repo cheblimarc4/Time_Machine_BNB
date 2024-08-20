@@ -34,6 +34,6 @@ class TimeMachinesController < ApplicationController
   end
 
   def timemachine_params
-    params.require(:time_machine).permit(:name, :size, :speed, :comfort)
+    params.require(:time_machine).permit(:name, :size, :speed, :comfort, :photo)
   end
 end

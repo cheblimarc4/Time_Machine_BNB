@@ -1,4 +1,5 @@
 class Booking < ApplicationRecord
+  has_one_attached :photo
    # A booking belongs to a user.
    belongs_to :user
 

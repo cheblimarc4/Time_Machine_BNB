@@ -1,4 +1,5 @@
 class TimeMachine < ApplicationRecord
+  has_one_attached :photo
   # A time machine belongs to a user (owner).
   belongs_to :owner, class_name: 'User', foreign_key: 'user_id'
 
