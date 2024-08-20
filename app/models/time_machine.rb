@@ -7,6 +7,4 @@ class TimeMachine < ApplicationRecord
 
   # Through bookings, a time machine can be booked by many users.
   has_many :users, through: :bookings
-
-  validates :name, :price, :comfort, :speed, :size, presence: true
 end
