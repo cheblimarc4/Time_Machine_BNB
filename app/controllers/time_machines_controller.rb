@@ -21,6 +21,12 @@ class TimeMachinesController < ApplicationController
       render new, status: :unprocessable_entity
     end
   end
+
+  def mine
+    @user = current_user
+    @time_machine = @user.owned_time_machines
+  end
+
   private
 
   def set_machine
