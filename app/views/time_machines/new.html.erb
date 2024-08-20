@@ -1,17 +1,17 @@
-<div class="fit-image p-5" style="background-image: radial-gradient(rgba(50, 50, 50, .1), rgba(10, 10, 10, 1)), url(<%= image_path 'galaxy.png'%>); min-height: 100vh">
+<div class="fit-image p-5" style="background-image:url(<%= image_path 'new_back.jpg'%>); min-height: 100vh">
   <div class="container d-flex justify-content-center">
-    <div class="background-purple p-5 rounded-5 text-white fs-5 form-box-shadow" style="width:33rem">
-      <h1 class="fw-bolder MMC-font">Add your time machine</h1>
+    <div class="background-lightest-purple p-5 rounded-5 text-white fs-5 form-box-shadow" style="width:33rem">
+      <h1>Add Your Time Machine</h1>
       <%= simple_form_for @machine, class:"input-focus" do |f| %>
-      <div class="form-border-color my-4 p-5 rounded-4">
-        <%= f.input :name%>
-        <%= f.input :speed%>
-        <%= f.input :comfort%>
-        <%= f.input :size%>
-        <%= f.input :price%>
-        <%= f.input :photo, as: :file %>
+      <div class="form-border-color my-4 p-5 rounded-4" style="border: 1px solid #E5B8F4;">
+        <%= f.input :name, input_html: { class: 'form-control', style: 'border-color: #C147E9;' } %>
+        <%= f.input :speed, input_html: { class: 'form-control', style: 'border-color: #C147E9;' } %>
+        <%= f.input :comfort, input_html: { class: 'form-control', style: 'border-color: #C147E9;' } %>
+        <%= f.input :size, input_html: { class: 'form-control', style: 'border-color: #C147E9;' } %>
+        <%= f.input :price, input_html: { class: 'form-control', style: 'border-color: #C147E9;' } %>
+        <%= f.input :photo, as: :file, input_html: { class: 'form-control', style: 'border-color: #C147E9;' }  %>
       </div>
-      <%= f.button :submit, class:"machine-button background-lightpurple rounded-pill text-white fw-bolder w-100 fs-5 button-spacing" %>
+      <%= f.button :submit, "Rent Time Machine", class:" w-100 fs-5 fw-bolder btn btn-primary" %>
       <% end %>
     </div>
   </div>
