@@ -4,13 +4,32 @@
 
 
 .background-purple {
-  background-color: #532D84;
+  background-color: $purple;
 }
 
 .background-lightpurple {
-  background-color: rgb(175, 119, 213);
+  background-color: $light-purple;
 }
 
+.background-lightestpurple {
+  background-color: $lightest-purple;
+}
+
+.background-darkpurple {
+  background-color: $dark-purple;
+}
+
+
+
+
+.background-lightgradientpurple {
+  background-image: radial-gradient($lightest-purple, $light-purple);
+}
+
+
+.text-darkpurple {
+  color: $dark-purple;
+}
 
 .button-spacing {
   letter-spacing: 3px;
@@ -22,7 +41,7 @@
 }
 .machine-button:hover {
   transform: scale(1.05);
-  background-color:  rgba(175, 119, 213, 0.5);
+  background-color:  $light-purple(175, 119, 213, 0.5);
 }
 
 .form-box-shadow{
@@ -31,9 +50,4 @@
 
 .form-border-color {
   border: 2px solid rgba(175, 119, 213, 0.5);
-}
-
-
-.MMC-font {
-  font-family: MMC;
 }
