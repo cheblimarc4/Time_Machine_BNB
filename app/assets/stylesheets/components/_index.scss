@@ -17,10 +17,15 @@
 }
 
 .btn-primary:hover {
-  background: linear-gradient(45deg, #C147E9, #810CA8, #2D033B); 
+  background: linear-gradient(45deg, #C147E9, #810CA8, #2D033B);
 }
 
 .btn-primary:focus, .btn-primary:active {
   box-shadow: none;
   outline: none;
+}
+
+.card-img-top{
+  height: 200px;
+  object-fit: cover;
 }

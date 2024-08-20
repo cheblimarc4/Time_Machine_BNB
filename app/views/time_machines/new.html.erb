@@ -9,6 +9,7 @@
         <%= f.input :comfort, input_html: { class: 'form-control', style: 'border-color: #C147E9;' } %>
         <%= f.input :size, input_html: { class: 'form-control', style: 'border-color: #C147E9;' } %>
         <%= f.input :price, input_html: { class: 'form-control', style: 'border-color: #C147E9;' } %>
+        <%= f.input :photo, as: :file, input_html: { class: 'form-control', style: 'border-color: #C147E9;' }  %>
       </div>
       <%= f.button :submit, "Rent Time Machine", class:" w-100 fs-5 fw-bolder btn btn-primary" %>
       <% end %>
