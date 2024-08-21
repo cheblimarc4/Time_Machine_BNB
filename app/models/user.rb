@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_one_attached :photo
   # Include default devise modules. Others available are:
  # A user can own many time machines.
  has_many :owned_time_machines, class_name: 'TimeMachine', foreign_key: 'user_id'

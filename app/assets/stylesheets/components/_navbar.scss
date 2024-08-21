@@ -1,11 +1,11 @@
 .navbar-lewagon {
-  justify-content: space-between;
   background: #FFFFFF;
+  box-shadow:0 1px 2px $light-purple;
 }
 
 .nav-link-white {
-  color:white;
-  font-size: 1rem;
+  color:$dark-purple;
+  font-size: 18px;
   padding-right: 1rem;
   text-decoration: none;
 }
@@ -20,4 +20,22 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.logo-title{
+  color: $dark-purple;
+}
+.middle-text{
+  color: $dark-purple;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'MMC Regular', sans-serif;
+}
+.logospace{
+  width: 40px;
+  height: 40px;
+}
+.dropdown-item{
+  color:$purple;
 }
