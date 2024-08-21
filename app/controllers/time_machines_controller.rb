@@ -9,6 +9,11 @@ class TimeMachinesController < ApplicationController
 
   def show
     @not_owner = @machine.owner != current_user
+      @marker =
+      {
+        lat: @machine.latitude,
+        lng: @machine.longitude
+      }
   end
 
   def create

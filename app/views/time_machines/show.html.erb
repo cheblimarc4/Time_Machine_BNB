@@ -1,4 +1,5 @@
-<div data-renter-target="bookform" data-renter-params-value="<%=@machine.to_json%>" class="fit-image d-flex justify-content-center align-items-center" data-controller="renter" style="background-image: radial-gradient(rgba(50, 50, 50, .1), rgba(10, 10, 10, 1)), url(<%= image_path 'new_back.jpg'%>); min-height: 100vh">
+
+<div data-renter-target="bookform" data-renter-params-value="<%=@machine.to_json%>" class="fit-image d-flex justify-content-evenly align-items-center border" data-controller="renter" style="background-image: radial-gradient(rgba(50, 50, 50, .1), rgba(10, 10, 10, 1)), url(<%= image_path 'new_back.jpg'%>); min-height: 100vh">
   <div class="px-5 rounded-5 text-white fs-5 form-box-shadow d-flex align-items-center flex-column" style="">
     <h2 class="fw-bolder my-3"><%=@machine.name%></h2>
     <img class="show-card-image" src="https://images.unsplash.com/photo-1635672992730-75d116f94971?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
@@ -15,6 +16,7 @@
     <!-- Modal content -->
   <div data-renter-target="modal" class="show-modal">
     <div class=" modal-content px-5 rounded-5 text-white fs-5 form-box-shadow d-flex align-items-center flex-column" style="">
+      <div class="cross" data-action="click->renter#hideBooking">x</div>
       <h2 class="fw-bolder my-3">Booking</h2>
       <div class="text-center text-darkpurple w-100 mt-3 rounded-5">
       <%# action="<%= time_machine_bookings_path(@machine)" method="POST" %>
@@ -42,4 +44,12 @@
       </div>
     </div>
   <div class="go-back-navigation"><%= link_to time_machines_path do%><i class="fa-solid fa-arrow-left-long"></i><%end%></div>
+</div>
+
+<div style="width: 30%; height: 500px; border-radius: 10px; "
+  data-controller="map"
+  data-map-marker-value="<%= @marker.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+  data-renter-target="mapbox">
+</div>
 </div>

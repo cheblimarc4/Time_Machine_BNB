@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="renter"
 export default class extends Controller {
-  static targets =["modal", "bookform", "startdate", "enddate", "price", "form", "message", "days"]
+  static targets =["modal", "bookform", "startdate", "enddate", "price", "form", "message", "days", "mapbox"]
   static values = {
     params: Object
   }
@@ -42,11 +42,17 @@ export default class extends Controller {
      }
   }
 
+  hideBooking() {
+    this.modalTarget.style.display = "none";
+    this.mapboxTarget.classList.remove("d-none")
+
+  }
 
   buttonClick(){
     this.modalTarget.style.display = "block";
-    this.bookformTarget.classList.remove("justify-content-center")
-    this.bookformTarget.classList.add("justify-content-evenly", "p-5")
+    // this.bookformTarget.classList.remove("justify-content-center")
+    // this.bookformTarget.classList.add("justify-content-evenly", "p-5")
+    this.mapboxTarget.classList.add("d-none")
   }
   calculatePrice() {
     const Days = ((Date.parse(this.enddateTarget.value) - Date.parse(this.startdateTarget.value)) / (60000 * 60 * 24));

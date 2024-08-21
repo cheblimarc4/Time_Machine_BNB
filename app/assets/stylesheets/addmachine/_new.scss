@@ -19,9 +19,6 @@
   background-color: $dark-purple;
 }
 
-
-
-
 .background-lightgradientpurple {
   background-image: radial-gradient($lightest-purple, $light-purple);
 }
@@ -50,4 +47,12 @@
 
 .form-border-color {
   border: 2px solid rgba(175, 119, 213, 0.5);
+}
+
+.mapboxgl-ctrl-geocoder {
+  max-width: none;
+  width: 100%;
+  border: 1px solid lightgrey;
+  box-shadow: none;
+  background-color: transparent;
 }
