@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="renter"
 export default class extends Controller {
-  static targets =["modal", "bookform", "startdate", "enddate", "price", "form", "message"]
+  static targets =["modal", "bookform", "startdate", "enddate", "price", "form", "message", "days"]
   static values = {
     params: Object
   }
@@ -51,7 +51,7 @@ export default class extends Controller {
   calculatePrice() {
     const Days = ((Date.parse(this.enddateTarget.value) - Date.parse(this.startdateTarget.value)) / (60000 * 60 * 24));
     const price = this.paramsValue.price * Days;
-    isNaN(price) ? this.priceTarget.innerHTML = 0 : this.priceTarget.innerHTML = price + "$"
+    isNaN(price) ? this.priceTarget.innerHTML = "0$" : this.priceTarget.innerHTML = price + "$"
   }
   buttonClose(){
     this.modalTarget.style.display = "none";
