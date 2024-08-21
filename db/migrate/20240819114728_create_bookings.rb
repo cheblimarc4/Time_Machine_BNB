@@ -5,7 +5,6 @@ class CreateBookings < ActiveRecord::Migration[7.1]
       t.references :time_machine, null: false, foreign_key: true
       t.date :start_date
       t.date :end_date
-
       t.timestamps
     end
   end
