@@ -8,4 +8,7 @@ class TimeMachine < ApplicationRecord
 
   # Through bookings, a time machine can be booked by many users.
   has_many :users, through: :bookings
+
+  geocoded_by :destination
+  after_validation :geocode, if: :will_save_change_to_destination?
 end
