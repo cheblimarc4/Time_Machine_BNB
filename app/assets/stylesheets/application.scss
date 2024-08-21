@@ -10,6 +10,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "log_in/index";
 
 
 // Adding Styles to Time Machine Form
@@ -17,13 +18,13 @@
 @import "addmachine/index";
 
 @font-face {
-  font-family: 'MMC';
-  src: asset-url('fonts/MCC-Regular.ttf') format('truetype');
+  font-family: 'MMC Regular';
+  src: url('../stylesheets/fonts/MMC\ Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 body{
   background-color: white;
-  font-family: MMC;
+  font-family: 'MMC Regular', sans-serif;
 }

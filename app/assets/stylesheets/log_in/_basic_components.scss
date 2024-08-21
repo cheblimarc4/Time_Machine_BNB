@@ -1,0 +1,48 @@
+.tm-sign-up {
+  background-color: #F4F4F4;
+  border-color: #810CA8;
+  border-radius: 70px;
+  color: #810CA8;
+}
+
+.tm-reset-pass {
+  background-color: #F4F4F4;
+  border-color: #810CA8;
+  border-radius: 70px;
+  color: #810CA8;
+  display: inline-block; /* Ensure the button is treated as an inline-block element */
+  padding: 10px 20px; /* Adjust the padding as needed */
+}
+
+.form-actions2 {
+  text-align: center; /* This centers inline and inline-block elements like your button */
+  margin-top: 20px; /* Adjust this margin as needed */
+}
+
+.tm-log-in-txt {
+  color: #810CA8; /* Text color */
+  max-width: 400px; /* Set a maximum width for the container */
+  min-height: 450px;
+  width: 100%; /* Ensure it takes full width up to max-width */
+  margin: 30px auto; /* Center the container horizontally */
+  padding: 30px; /* Add padding inside the container */
+  box-shadow: 4px 4px 8px rgba(229, 184, 244, 0.5); /* Add a shadow with opacity */
+  background-color: #fff; /* Set a background color */
+  border-radius: 8px; /* Add rounded corners */
+}
+
+.forgot-pass-link {
+  font-size: 14px; /* Adjust the font size as needed */
+  color: #810CA8; /* Set the text color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+  margin: 30px 0px 0px 0px;
+  padding: 6px;
+
+  &:hover {
+    color: #810CA8; /* Change color on hover (example color) */
+    background-color: #F4F4F4;
+    border-color: #810CA8;
+    border-radius: 70px;
+  }
+}
