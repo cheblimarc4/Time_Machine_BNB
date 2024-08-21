@@ -17,15 +17,3 @@
 @import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
 @import url("https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css");
 @import "addmachine/index";
-
-@font-face {
-  font-family: 'MMC Regular';
-  src: url('../stylesheets/fonts/MMC\ Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-body{
-  background-color: white;
-  font-family: 'MMC Regular', sans-serif;
-}

@@ -1,3 +1,4 @@
+
 <div data-renter-target="bookform" data-renter-params-value="<%=@machine.to_json%>" class="fit-image d-flex justify-content-evenly align-items-center border" data-controller="renter" style="background-image: radial-gradient(rgba(50, 50, 50, .1), rgba(10, 10, 10, 1)), url(<%= image_path 'new_back.jpg'%>); min-height: 100vh">
   <div class="px-5 rounded-5 text-white fs-5 form-box-shadow d-flex align-items-center flex-column" style="">
     <h2 class="fw-bolder my-3"><%=@machine.name%></h2>
@@ -42,6 +43,7 @@
       </form>
       </div>
     </div>
+  <div class="go-back-navigation"><%= link_to time_machines_path do%><i class="fa-solid fa-arrow-left-long"></i><%end%></div>
 </div>
 
 <div style="width: 30%; height: 500px; border-radius: 10px; "

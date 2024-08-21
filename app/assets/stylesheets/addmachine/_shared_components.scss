@@ -1,0 +1,17 @@
+.go-back-navigation {
+  font-size: 60px;
+  font-weight: bolder;
+  line-height: 50px;
+  position: absolute;
+  background: linear-gradient(45deg, #2D033B, #810CA8, #C147E9);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  /*highlight-start */
+  display: inline-block;
+  top: 0;
+  left: 0;
+  margin-left: 20px;
+}
