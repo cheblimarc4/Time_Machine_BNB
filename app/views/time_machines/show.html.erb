@@ -6,10 +6,10 @@
       <p>Speed: <%= @machine.speed || "Not Specified" %></p>
       <p>Comfort: <%= @machine.comfort || "Not Specified" %></p>
       <p>Size: <%= @machine.size || "Not Specified" %></p>
-      <p>Price: <%= @machine.price || "Not Specified" %></p>
-    </div>x``
+      <p>Price: <%= "#{@machine.price}$" || "Not Specified" %></p>
+    </div>
       <div class="my-3">
-        <a class="purple-button" data-action="click->renter#buttonClick">Rent</a>
+        <a class="btn btn-primary px-5 fw-bolder" data-action="click->renter#buttonClick">Rent</a>
       </div>
   </div>
     <!-- Modal content -->
@@ -36,7 +36,7 @@
           <div class="d-flex justify-content-evenly"><label class="text-white">Price:</label><div data-renter-target="price" class="text-white d-inline-block">0$</div></div>
         </div>
         <div class="my-3">
-          <input type="submit" name="submit" class="btn btn-primary px-5 fs-4 fw-bolder" data-action="click->renter#buttonClick" value="Book"/>
+          <input type="submit" name="submit" class="btn btn-primary px-5 fw-bolder" data-action="click->renter#buttonClick" value="Book"/>
         </div>
       </form>
       </div>
