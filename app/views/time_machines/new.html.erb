@@ -1,4 +1,4 @@
-<div class="fit-image p-5" style="background-image:url(<%= image_path 'new_back.jpg'%>); min-height: 100vh">
+<div class="fit-image p-5" style="background-image:url(<%= image_path 'new_back.jpg'%>); min-height: 100vh; position:relative">
   <div class="container d-flex justify-content-center">
     <div class="background-lightest-purple p-5 rounded-5 text-white fs-5 form-box-shadow" style="width:33rem">
       <h1>Add Your Time Machine</h1>
@@ -11,8 +11,9 @@
         <%= f.input :price, input_html: { class: 'form-control', style: 'border-color: #C147E9;' } %>
         <%= f.input :photo, as: :file, input_html: { class: 'form-control', style: 'border-color: #C147E9;' }  %>
       </div>
-      <%= f.button :submit, "Rent Time Machine", class:" w-100 fs-5 fw-bolder btn btn-primary" %>
+      <%= f.button :submit, "Add Time Machine", class:" w-100 fs-5 fw-bolder btn btn-primary" %>
       <% end %>
     </div>
   </div>
+<div class="go-back-navigation"><%= link_to time_machines_path do%><i class="fa-solid fa-arrow-left-long"></i><%end%></div>
 </div>
