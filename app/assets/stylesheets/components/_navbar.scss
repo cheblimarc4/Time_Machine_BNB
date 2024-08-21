@@ -1,10 +1,12 @@
 .navbar-lewagon {
   background: #FFFFFF;
-  box-shadow:0 1px 2px $light-purple;
+  box-shadow:0 1px 2px #CEA4E7;
+
 }
 
 .nav-link-white {
-  color:$dark-purple;
+  color:#CEA4E7;
+  font-weight: 600;
   font-size: 18px;
   padding-right: 1rem;
   text-decoration: none;
@@ -23,13 +25,14 @@
 }
 
 .logo-title{
-  color: $dark-purple;
+  color: #CEA4E7;
+  font-weight: 600;
 }
 .middle-text{
-  color: $dark-purple;
+  color: #CEA4E7;
   font-size: 18px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   font-family: 'MMC Regular', sans-serif;
 }
 .logospace{

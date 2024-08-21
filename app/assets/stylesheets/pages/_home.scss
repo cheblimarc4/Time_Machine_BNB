@@ -53,3 +53,48 @@
 .cta-button:hover {
   background-color: #333333;
 }
+
+.how-steps{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  align-items: center;
+}
+.how-it-works {
+  background-color: #f8f8f8;
+  padding: 40px 0;
+  height: 500px;
+}
+
+.step {
+  text-align: center;
+  width: 30%;
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  background-color: #673ab7; /* Matching purple theme */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+}
+
+.circle span {
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+p {
+  font-size: 14px;
+  color: #666;
+}
