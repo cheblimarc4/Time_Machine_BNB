@@ -207,6 +207,7 @@
     end_date: Date.today + 30.days
   )
 
+
   puts "Bookings created."
 
   puts "Seeding completed successfully."
