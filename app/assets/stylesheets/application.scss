@@ -16,15 +16,3 @@
 // Adding Styles to Time Machine Form
 
 @import "addmachine/index";
-
-@font-face {
-  font-family: 'MMC Regular';
-  src: url('../stylesheets/fonts/MMC\ Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-body{
-  background-color: white;
-  font-family: 'MMC Regular', sans-serif;
-}
