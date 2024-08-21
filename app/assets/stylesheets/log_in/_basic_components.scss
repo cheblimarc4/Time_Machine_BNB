@@ -56,18 +56,13 @@
   overflow: hidden; /* Hide overflow */
 }
 
-#bg-video {
+.background-container video {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -1; /* Ensure the video is behind the content */
+  width: 100%;
+  height: 100%;
   // transform: translate(-50%, -50%);
   // filter: opacity(0.5); /* Set opacity for the video */
-  transform: translate(-50%, -50%) scale(0.8); /* Adjust scale here */
   object-fit: cover; /* Ensures the video covers the entire area */
+  z-index: -1; /* Ensure the video is behind the content */
 // }
 }
