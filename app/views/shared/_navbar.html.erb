@@ -1,22 +1,24 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
+    <!-- Left-aligned logo -->
     <div class="d-flex align-items-center">
-      <%= link_to home_path, class: "navbar-brand d-flex align-items-center" do %>
-        <%= image_tag "Spacelogo.png" %>
-        <h4 class="logo-title ms-2 mb-0">SpaceBNB</h4>
+      <%= link_to "#", class: "navbar-brand d-flex align-items-center" do %>
+        <%= image_tag "hourglass.png" %>
+        <h4 class="logo-title ms-2 mb-0">TimeFlies</h4>
       <% end %>
     </div>
 
+    <%# <!-- Center-aligned button -->
     <div class="d-flex align-items-center justify-content-center flex-grow-1">
-      <%= link_to "Browse available Time Machines", time_machines_path, class:"middle-text mb-0"%>
-    </div>
+      <% if user_signed_in? %>
+        <%# <%= link_to "Add your TimeMachine", new_time_machine_path, class: "nav-link-white center-button" %>
+      <%# <% end %>
+    <%# </div>  %>
 
+    <!-- Right-aligned items -->
     <div class="d-flex align-items-center justify-content-end">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav">
         <% if user_signed_in? %>
-          <li class="nav-item-white">
-            <%= link_to "Add your Time Machine", new_time_machine_path, class: "nav-link-white" %>
-          </li>
           <li class="nav-item dropdown">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= image_tag "user_logo.png", class: "avatar", alt: "dropdown menu" %>
