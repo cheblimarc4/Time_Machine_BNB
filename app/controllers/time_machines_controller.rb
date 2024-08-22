@@ -14,14 +14,17 @@ class TimeMachinesController < ApplicationController
         lat: @machine.latitude,
         lng: @machine.longitude
       }
-  end
+      # console.log(@marker)
+      # console.log(@machine.destination)
+      # console.log(@machine.time_period)
+    end
 
   def create
     @user = current_user
     @machine = TimeMachine.new(timemachine_params)
     @machine.owner = @user
     if @machine.save
-      redirect_to root_path
+      redirect_to time_machines_path
     else
       render new, status: :unprocessable_entity
     end
@@ -39,6 +42,6 @@ class TimeMachinesController < ApplicationController
   end
 
   def timemachine_params
-    params.require(:time_machine).permit(:name, :size, :speed, :comfort, :photo)
+    params.require(:time_machine).permit(:name, :size, :price, :speed, :comfort, :photo, :destination, :time_period, :time_year)
   end
 end

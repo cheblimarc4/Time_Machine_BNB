@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <div class="d-flex align-items-center">
-      <%= link_to "#", class: "navbar-brand d-flex align-items-center" do %>
+      <%= link_to home_path, class: "navbar-brand d-flex align-items-center" do %>
         <%= image_tag "Spacelogo.png" %>
         <h4 class="logo-title ms-2 mb-0">SpaceBNB</h4>
       <% end %>
@@ -15,7 +15,7 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item-white">
-            <%= link_to "Rent Your Time Machine", new_time_machine_path, class: "nav-link-white" %>
+            <%= link_to "Add your Time Machine", new_time_machine_path, class: "nav-link-white" %>
           </li>
           <li class="nav-item dropdown">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -23,6 +23,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My Time Machines",  time_machines_mine_path, class: "dropdown-item" %>
+              <%= link_to "My Bookings",  bookings_mine_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
