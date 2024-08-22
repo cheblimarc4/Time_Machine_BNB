@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_machine, only: %i[new create]
-  before_action :check_user, only: %i[new create]
+  before_action :check_user
   def new
   end
 
@@ -16,9 +16,7 @@ class BookingsController < ApplicationController
       end
     end
   end
-  def mine
-    @my_bookings = Booking.where(user: current_user)
-  end
+
   private
 
   def set_params
