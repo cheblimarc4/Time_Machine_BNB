@@ -66,6 +66,7 @@
   margin-top: 30px;
   align-items: center;
   font-family: 'Nunito', sans-serif;
+  background-color: #f8f8f8;
 }
 .how-it-works {
   background-color: #f8f8f8;
@@ -77,6 +78,7 @@
   text-align: center;
   width: 30%;
   font-family: 'Nunito', sans-serif;
+  background-color: #f8f8f8;
 }
 
 .circle {
@@ -111,14 +113,38 @@
   font-family: 'Nunito', sans-serif;
 }
 
-
-//footer styling
-.text-muted {
-text-decoration: none;
-padding: 80px;
+.footer {
+  background-color: #f8f8f8; /* Matching the background color of .how-steps */
+  padding: 40px 0; /* Increased padding to give more space inside the footer */
 }
 
-.text-muted2 {
+.footer-line {
+  border: 0;
+  border-top: 2px solid #810ca8; /* Purple stripe color */
+  margin: 20px 0; /* Increased margin to add more space between the lines and content */
+}
+
+.text-muted, .text-muted2 {
+  color: #666666; /* Unified gray shade for all text */
   text-decoration: none;
-  padding: 20px;
-  }
+  padding: 0; /* Removed padding to fit within the footer layout */
+}
+
+.footer p.small {
+  margin-bottom: 0; /* Ensure text does not have additional spacing */
+  padding: 10px 0; /* Added padding for the text */
+}
+
+.nav-item {
+  margin: 0 20px; /* Increased spacing between footer items */
+}
+
+
+.nav-link {
+  padding: 10px 0; /* Added padding around each nav link for more spacing */
+  color: #666666 !important; /* Ensure nav links also match the gray color */
+}
+
+.nav-link:hover {
+  color: #4A4A4A !important; /* Optional: Slightly darker gray on hover */
+}
