@@ -1,13 +1,14 @@
 // Specific CSS for your home-page
 /* Banner styles */
 .banner {
-  background: linear-gradient(135deg, #DDA8F3, #B89DD4);
+  background: linear-gradient(135deg, #2d033b, #e5b8f4, white);
   color: #1E1E1E;
   text-align: center;
   padding: 100px 20px;
   position: relative;
   overflow: hidden;
 }
+
 .wave-pattern {
   position: absolute;
   top: 0;
@@ -17,6 +18,7 @@
   z-index: 1;
   pointer-events: none;
 }
+
 .banner-content {
   position: relative;
   z-index: 2;
@@ -27,6 +29,7 @@
 .banner h1 {
   font-size: 48px;
   margin-bottom: 20px;
+  font-family: 'Nunito', sans-serif;
 }
 
 .banner .highlight {
@@ -38,20 +41,23 @@
   font-size: 18px;
   margin-bottom: 40px;
   color: #4A4A4A;
+  font-family: 'Nunito', sans-serif;
 }
 
 .cta-button {
-  background-color: #1E1E1E;
+  background-color: #292929;
   color: #FFFFFF;
   padding: 15px 30px;
   text-decoration: none;
   border-radius: 5px;
   font-size: 16px;
   display: inline-block;
+  font-family: 'Nunito', sans-serif;
 }
 
 .cta-button:hover {
   background-color: #333333;
+  font-family: 'Nunito', sans-serif;
 }
 
 .how-steps{
@@ -59,42 +65,60 @@
   justify-content: space-around;
   margin-top: 30px;
   align-items: center;
+  font-family: 'Nunito', sans-serif;
 }
 .how-it-works {
   background-color: #f8f8f8;
   padding: 40px 0;
-  height: 500px;
+  font-family: 'Nunito', sans-serif;
 }
 
 .step {
   text-align: center;
   width: 30%;
+  font-family: 'Nunito', sans-serif;
 }
 
 .circle {
   width: 60px;
   height: 60px;
-  background-color: #673ab7; /* Matching purple theme */
+  background-color: #2d033b; /* Matching purple theme */
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto 20px;
+  font-family: 'Nunito', sans-serif;
 }
 
 .circle span {
   font-size: 24px;
   color: white;
   font-weight: bold;
+  font-family: 'Nunito', sans-serif;
 }
 
 h3 {
   font-size: 18px;
   margin-bottom: 10px;
   color: #333;
+  font-family: 'Nunito', sans-serif;
 }
 
 p {
   font-size: 14px;
   color: #666;
+  font-family: 'Nunito', sans-serif;
 }
+
+
+//footer styling
+.text-muted {
+text-decoration: none;
+padding: 80px;
+}
+
+.text-muted2 {
+  text-decoration: none;
+  padding: 20px;
+  }
