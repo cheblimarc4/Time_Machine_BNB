@@ -2,18 +2,11 @@
   <div class="container-fluid">
     <!-- Left-aligned logo -->
     <div class="d-flex align-items-center">
-      <%= link_to "#", class: "navbar-brand d-flex align-items-center" do %>
+      <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
         <%= image_tag "hourglass.png" %>
         <h4 class="logo-title ms-2 mb-0">TimeFlies</h4>
       <% end %>
     </div>
-
-    <%# <!-- Center-aligned button -->
-    <div class="d-flex align-items-center justify-content-center flex-grow-1">
-      <% if user_signed_in? %>
-        <%# <%= link_to "Add your TimeMachine", new_time_machine_path, class: "nav-link-white center-button" %>
-      <%# <% end %>
-    <%# </div>  %>
 
     <!-- Right-aligned items -->
     <div class="d-flex align-items-center justify-content-end">
