@@ -37,8 +37,6 @@ class TimeMachinesController < ApplicationController
     @display_list = @time_machine.map do |machine|
 
     end
-
-    raise
   end
 
   private
