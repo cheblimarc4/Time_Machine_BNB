@@ -1,20 +1,17 @@
-<div data-renter-target="bookform" data-renter-params-value="<%=@machine.to_json%>" class="fit-image d-flex justify-content-evenly align-items-center border" data-controller="renter" style="background-image: radial-gradient(rgba(50, 50, 50, .1), rgba(10, 10, 10, 1)), url(<%= image_path 'new_back.jpg'%>); min-height: 100vh">
-  <div class="px-5 rounded-5 text-white fs-5 form-box-shadow d-flex align-items-center flex-column" style="width: 500px; min-height: 500px;">
-    <h2 class="fw-bolder my-3 text-center"><%=@machine.name%></h2>
-    <% if @machine.photo.attached? %>
-      <%= cl_image_tag @machine.photo.key, class:"show-card-img",style:"width: 100%; border-radius: 10px;"%>
-    <% else %>
-      <img src="https://images.unsplash.com/reserve/LJIZlzHgQ7WPSh5KVTCB_Typewriter.jpg?q=80&w=3396&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="show-card-img" style="width: 100%; border-radius: 10px;">
-    <% end %>
-    <div class="text-center text-white w-100 mt-4 p-0 d-flex flex-column gap-3">
-      <div class="d-flex justify-content-between">
-        <p class="fw-bolder"><i class="fa-solid fa-wind me-2"></i> Speed</p><p><%= @machine.speed || "Not Specified" %></p>
-      </div>
-      <div class="d-flex justify-content-between">
-        <p class="fw-bolder"><i class="fa-solid fa-couch me-2"></i> Comfort</p><p><%= @machine.comfort || "Not Specified" %></p>
-      </div>
-      <div class="d-flex justify-content-between">
-        <p class="fw-bolder"><i class="fa-solid fa-maximize me-2"></i> Size</p><p><%= @machine.size || "Not Specified" %></p>
+
+
+<div data-renter-target="bookform" data-renter-params-value="<%=@machine.to_json%>" class="fit-image d-flex justify-content-evenly align-items-center border" data-controller="renter" style="background-image: radial-gradient(rgba(50, 50, 50, .1), rgba(10, 10, 10, 1)), url(<%= image_path 'new_back.jpg'%>); min-height: 100vh;position:relative;">
+  <div class="px-5 rounded-5 text-white fs-5 form-box-shadow d-flex align-items-center flex-column" style="">
+    <h2 class="fw-bolder my-3"><%=@machine.name%></h2>
+    <img class="show-card-image" src="https://images.unsplash.com/photo-1635672992730-75d116f94971?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+    <div class="text-center  text-white w-100 mt-3 rounded-5 d-flex justify-content-evenly">
+      <div><p class="fw-bolder"><i class="fa-solid fa-wind"></i> Speed</p><p><%= @machine.speed || "Not Specified" %></p></div>
+      <div><p class="fw-bolder"><i class="fa-solid fa-couch"></i> Comfort</p><p><%= @machine.comfort || "Not Specified" %></p></div>
+      <div><p class="fw-bolder"><i class="fa-solid fa-maximize"></i> Size</p><p><%= @machine.size || "Not Specified" %></p></div>
+      <div><p class="fw-bolder"><i class="fa-solid fa-piggy-bank"></i> Price</p><p><%= "#{@machine.price}$" || "Not Specified" %></p></div>
+    </div>
+      <div class="my-3">
+        <a class="btn btn-primary px-5 fw-bolder" data-action="click->renter#buttonClick">Rent</a>
       </div>
       <div class="d-flex justify-content-between">
         <p class="fw-bolder"><i class="fa-solid fa-piggy-bank me-2"></i> Price</p><p><%= "#{@machine.price}$" || "Not Specified" %></p>
@@ -38,33 +35,26 @@
       <h2 class="fw-bolder my-3">Booking</h2>
       <div class="text-center text-darkpurple w-100 mt-3 rounded-5">
         <form data-renter-target="form" data-action="submit->renter#send">
-          <div class="d-flex justify-content-between">
-            <div class="me-2">
-              <label for="booking[start_date]" class="text-white">Start Date</label>
-              <input name="booking[start_date]" data-renter-target="startdate" data-action="change->renter#calculatePrice" id="startdate" data-controller="datepicker" class="form-control" />
+          <div class="d-flex">
+            <div>
+              <label for="booking[start_date]" class="text-white" >Start Date</label>
+              <input name="booking[start_date]" data-renter-target="startdate" data-datepicker-lastbooking-value="<%=@availabledate.to_json%>" data-action="change->renter#calculatePrice" id="startdate" data-controller="datepicker"/>
             </div>
             <div>
-              <label for="booking[end_date]" class="text-white">End Date</label>
-              <input name="booking[end_date]" data-renter-target="enddate" data-action="change->renter#calculatePrice" id="enddate" data-controller="datepicker" class="form-control" />
+              <label for="booking[end_date]" class="text-white" >End Date</label>
+              <input name="booking[end_date]" data-renter-target="enddate" data-datepicker-lastbooking-value="<%=@availabledate.to_json%>" data-action="change->renter#calculatePrice" id="enddate" data-controller="datepicker"/>
             </div>
-          </div>
-          <div class="alert d-none mt-3" role="alert" data-renter-target="message"></div>
-          <div class="px-5 d-flex flex-column my-3">
-            <div class="d-flex justify-content-between">
-              <label class="text-white">Price:</label>
-              <div data-renter-target="price" class="text-white d-inline-block">0$</div>
+           </div>
+           <div class="alert d-none mt-3" role="alert" data-renter-target="message"></div>
+           <div class="px-5 d-flex flex-column my-3">
+            <div class="d-flex justify-content-evenly"><label class="text-white">Price:</label><div data-renter-target="price" class="text-white d-inline-block">0$</div>
+             </div>
             </div>
-          </div>
-          <div class="my-3">
-            <input type="submit" name="submit" class="btn btn-primary px-5 fw-bolder" data-action="click->renter#buttonClick" value="Book" />
-          </div>
-        </form>
+            <div class="my-3">
+              <input type="submit" name="submit" class="btn btn-primary px-5 fw-bolder" data-action="click->renter#buttonClick" value="Book" />
+              </div>
+          </form>
       </div>
-    </div>
-    <div class="go-back-navigation mt-4">
-      <%= link_to time_machines_path do %>
-        <i class="fa-solid fa-arrow-left-long"></i> Go Back
-      <% end %>
     </div>
   </div>
 
@@ -74,4 +64,5 @@
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
     data-renter-target="mapbox">
   </div>
+  <div class="go-back-navigation"><%= link_to time_machines_path do%><i class="fa-solid fa-arrow-left-long"></i><%end%></div>
 </div>

@@ -1,33 +1,17 @@
 .navbar-lewagon {
   background: #FFFFFF;
-  box-shadow:0 1px 2px #CEA4E7;
+  box-shadow:0 1px 2px $purple;
+
 }
 
-// .nav-link-white {
-//   color: #810CA8;
-//   font-weight: 500;
-//   font-size: 18px;
-//   padding-right: 1rem;
-//   text-decoration: none;
-//   font-family: 'Nunito', sans-serif;
-// }
+.nav-link-white {
+  color:$purple;
+  font-weight: 600;
+  font-size: 18px;
+  padding-right: 1rem;
+  text-decoration: none;
+}
 
-// .nav-link-white {
-//   color: black;
-//   font-weight: 500;
-//   font-size: 18px;
-//   padding: 0.5rem 1rem; /* Adjusted padding to give it a button-like appearance */
-//   text-decoration: none;
-//   font-family: 'Nunito', sans-serif;
-//   border: 1.5px solid black; /* Adds a border with the same color as the text */
-//   background-color: transparent; /* Ensures there is no background color */
-//   border-radius: 30px; /* Adds rounded corners to the button */
-
-//   &:hover {
-//     background-color: rgba(215, 211, 216, 0.199); /* Adds a subtle background color on hover */
-//     text-decoration: none;
-//   }
-// }
 
 .nav-item-white {
   margin-top: 0.4rem;
@@ -41,6 +25,7 @@
   width: 40px;
 }
 
+
 .logo-title {
   color: #810CA8;
   font-weight: 700;
@@ -49,7 +34,7 @@
 }
 
 .middle-text{
-  color: #CEA4E7;
+  color: $purple;
   font-size: 18px;
   text-decoration: none;
   font-weight: 600;

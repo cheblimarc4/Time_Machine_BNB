@@ -9,6 +9,7 @@ class TimeMachinesController < ApplicationController
 
   def show
     @not_owner = @machine.owner != current_user
+    @availabledate = @machine.bookings.order(:end_date).last || {}
       @marker =
       {
         lat: @machine.latitude,
@@ -33,6 +34,11 @@ class TimeMachinesController < ApplicationController
   def mine
     @user = current_user
     @time_machine = @user.owned_time_machines
+    @display_list = @time_machine.map do |machine|
+
+    end
+
+    raise
   end
 
   private

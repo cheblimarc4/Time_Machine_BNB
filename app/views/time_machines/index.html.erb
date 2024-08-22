@@ -1,4 +1,5 @@
-<div class = "d-inline-flex p-2 m-4 flex-wrap w-100">
+<div class="fit-image p-5" style="background-image:url(<%= image_path 'new_back.jpg'%>); min-height: 100vh; position:relative">
+<div class = "d-inline-flex p-2 m-4 flex-wrap w-100 justify-content-center">
   <%@machines.each do |machine| %>
     <div class="card m-3" style="width: 18rem;">
       <%= link_to time_machine_path(machine) do %>
@@ -11,8 +12,11 @@
       <div class="card-body">
         <h5 class="card-title"><%= machine.name.upcase %></h5>
         <p class="card-text">This time machine will take you to the future!</p>
-          <%= link_to "More Information", time_machine_path(machine), class:"btn btn-primary" %>
+        <p class="card-text">Available on: <%= machine.bookings.last ? machine.bookings.last.end_date : Date.today%></p>
+        <%= link_to "More Information", time_machine_path(machine), class:"btn btn-primary" %>
+
       </div>
     </div>
   <% end %>
+</div>
 </div>
