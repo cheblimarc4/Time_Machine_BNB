@@ -1,28 +1,31 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
+    <!-- Left-aligned logo -->
     <div class="d-flex align-items-center">
       <%= link_to "#", class: "navbar-brand d-flex align-items-center" do %>
-        <%= image_tag "Spacelogo.png" %>
-        <h4 class="logo-title ms-2 mb-0">SpaceBNB</h4>
+        <%= image_tag "hourglass.png" %>
+        <h4 class="logo-title ms-2 mb-0">TimeFlies</h4>
       <% end %>
     </div>
 
+    <%# <!-- Center-aligned button -->
     <div class="d-flex align-items-center justify-content-center flex-grow-1">
-      <%= link_to "Browse available Time Machines", time_machines_path, class:"middle-text mb-0"%>
-    </div>
+      <% if user_signed_in? %>
+        <%# <%= link_to "Add your TimeMachine", new_time_machine_path, class: "nav-link-white center-button" %>
+      <%# <% end %>
+    <%# </div>  %>
 
+    <!-- Right-aligned items -->
     <div class="d-flex align-items-center justify-content-end">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav">
         <% if user_signed_in? %>
-          <li class="nav-item-white">
-            <%= link_to "Rent Your Time Machine", new_time_machine_path, class: "nav-link-white" %>
-          </li>
           <li class="nav-item dropdown">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= image_tag "user_logo.png", class: "avatar", alt: "dropdown menu" %>
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My Time Machines",  time_machines_mine_path, class: "dropdown-item" %>
+              <%= link_to "My Bookings",  bookings_mine_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>

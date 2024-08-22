@@ -12,6 +12,7 @@
   text-decoration: none;
 }
 
+
 .nav-item-white {
   margin-top: 0.4rem;
 }
@@ -24,16 +25,20 @@
   width: 40px;
 }
 
-.logo-title{
-  color: $purple;
-  font-weight: 600;
+
+.logo-title {
+  color: #810CA8;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif; /* Apply the font */
+  letter-spacing: 2px;
 }
+
 .middle-text{
   color: $purple;
   font-size: 18px;
   text-decoration: none;
   font-weight: 600;
-  font-family: 'MMC Regular', sans-serif;
+  font-family: 'Nunito', sans-serif;
 }
 .logospace{
   width: 40px;
@@ -41,4 +46,9 @@
 }
 .dropdown-item{
   color:$purple;
+}
+
+.avatar {
+  width: 45px;  /* Adjust the width as needed */
+  height: 45px; /* Adjust the height as needed */
 }

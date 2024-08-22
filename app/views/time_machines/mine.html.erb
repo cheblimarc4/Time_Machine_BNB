@@ -1,3 +1,4 @@
+
 <div class="fit-image p-5" data-controller="showallbookings" data-showallbookings-mymachines-value ="<%=@time_machine.to_json%>" style="background-image:url(<%= image_path 'new_back.jpg'%>); min-height: 100vh; position:relative">
   <div class="d-flex p-5 justify-content-between">
   <div class = "container d-inline-flex justify-content-center p-2 flex-wrap form-border-color overflow-scroll" style="width:49%;height:75vh">
@@ -12,6 +13,7 @@
           <h5 class="card-title"><%= machine.name.upcase %></h5>
           <%# <p class="card-text">This time machine will take you to <strong><%= machine.time_year</strong> <%= machine.destination</p> %> %>
         </div>
+
       </div>
     <%end %>
   </div>

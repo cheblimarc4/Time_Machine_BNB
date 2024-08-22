@@ -14,6 +14,7 @@
         <p class="card-text">This time machine will take you to the future!</p>
         <p class="card-text">Available on: <%= machine.bookings.last ? machine.bookings.last.end_date : Date.today%></p>
         <%= link_to "More Information", time_machine_path(machine), class:"btn btn-primary" %>
+
       </div>
     </div>
   <% end %>
