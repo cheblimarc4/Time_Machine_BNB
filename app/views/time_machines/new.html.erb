@@ -4,17 +4,29 @@
       <h1>Add Your Time Machine</h1>
       <%= simple_form_for @machine, class:"input-focus" do |f| %>
       <div class="form-border-color my-4 p-5 rounded-4" style="border: 1px solid #E5B8F4;">
-        <%= f.input :name, input_html: { class: 'form-control', style: 'border-color: #C147E9;' } %>
-        <%= f.input :speed, input_html: { class: 'form-control', style: 'border-color: #C147E9;' } %>
-        <%= f.input :comfort, input_html: { class: 'form-control', style: 'border-color: #C147E9;' } %>
-        <%= f.input :size, input_html: { class: 'form-control', style: 'border-color: #C147E9;' } %>
-        <%= f.input :price, input_html: { class: 'form-control', style: 'border-color: #C147E9;' } %>
-        <%= f.input :destination,
+        <!-- Time Machine Model -->
+        <%= f.input :name, label: "Time Machine Model", input_html: { class: 'form-control', style: 'border-color: #C147E9;' } %>
+        <!-- Time Travel Speed (Dropdown) -->
+        <%= f.input :speed, label: "Time Travel Speed", as: :select, collection: ['1 year/sec', '10 years/sec', '50 years/sec', '100 years/sec'], input_html: { class: 'form-control', style: 'border-color: #C147E9;' } %>
+        <!-- Comfort Level (Dropdown) -->
+        <%= f.input :comfort, label: "Comfort Level", as: :select, collection: ['Basic', 'Standard', 'Luxury', 'First Class'], input_html: { class: 'form-control', style: 'border-color: #C147E9;' } %>
+        <!-- Cabin Size -->
+        <%= f.input :size, label: "Cabin Size (Passengers)", input_html: { class: 'form-control', style: 'border-color: #C147E9;' } %>
+        <!-- Rental Price -->
+        <%= f.input :price, label: "Rental Price (per day)", input_html: { class: 'form-control', style: 'border-color: #C147E9;' } %>
+        <!-- Preferred Time Period (Dropdown) -->
+        <%= f.input :time_period, label: "Preferred Time Period", as: :select, collection: ['Past', 'Present', 'Future'], input_html: { class: 'form-control', style: 'border-color: #C147E9;' } %>
+        <!-- Time Travel Year -->
+        <%= f.input :time_year, label: "Preferred Year",  input_html: { class: 'form-control', style: 'border-color: #C147E9;' } %>
+        <!-- Time Travel Destination -->
+        <%= f.input :destination, label: "Time Travel Destination",
             input_html: {data: {address_autocomplete_target: "destination"},class:"d-none"},
-            wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
+            wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]},class:"form-control", style: 'border-color: #C147E9;'}
         %>
-        <%= f.input :photo, as: :file, input_html: { class: 'form-control', style: 'border-color: #C147E9;' }  %>
-      </div>
+        <!-- Upload Time Machine Photo -->
+        <%= f.input :photo, as: :file, label: "Upload Time Machine Photo", input_html: { class: 'form-control', style: 'border-color: #C147E9;' } %>
+</div>
+
       <%= f.button :submit, "Add Time Machine", class:" w-100 fs-5 fw-bolder btn btn-primary" %>
       <% end %>
     </div>
