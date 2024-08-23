@@ -5,9 +5,12 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static values = {
     machine: Object,
-    bookings: Array
+    bookings: Array,
+    users: Array
   }
   connect() {
+    console.log(this.bookingsValue);
+    console.log(this.usersValue);
   }
   displayDetails() {
     let main = document.getElementById("main");
@@ -18,11 +21,18 @@ export default class extends Controller {
     }
     this.bookingsValue.forEach( (booking) => {
       let card = template.content.cloneNode(true);
-      card.querySelector("#booker").innerHTML = "Booked by:<strong> user's name </strong>";
-      card.querySelector("#dates").innerHTML = `<strong> Start: ${booking.start_date} - End: ${booking.end_date}</strong>`;
+      card.querySelector("#machine-name").parentNode.remove();
+      card.querySelector("#booker").innerHTML = `<strong> ${ this.getusername(booking.user_id)  }</strong>`;
+      card.querySelector("#dates").innerHTML = `<strong> ${booking.start_date} / ${booking.end_date}</strong>`;
       const Days = ((Date.parse(booking.end_date) - Date.parse(booking.start_date)) / (60000 * 60 * 24));
-      card.querySelector("#paid").innerHTML = `Paid:<strong>${this.machineValue.price * Days}$</strong>`;
+      card.querySelector("#paid").innerHTML = `<strong>${this.machineValue.price * Days}$</strong>`;
       main.appendChild(card);
     })
+  }
+
+  getusername(user_id) {
+    for (let i = 0; i < this.usersValue.length; i++){
+      return `${this.usersValue[i].first_name} ${this.usersValue[i].last_name}`
+     }
   }
 }
