@@ -15,6 +15,7 @@ class TimeMachinesController < ApplicationController
         lat: @machine.latitude,
         lng: @machine.longitude
       }
+
   end
 
   def create
@@ -58,6 +59,6 @@ class TimeMachinesController < ApplicationController
   end
 
   def timemachine_params
-    params.require(:time_machine).permit(:name, :size, :speed, :comfort, :photo)
+    params.require(:time_machine).permit(:name, :size, :price, :speed, :comfort, :photo, :destination, :time_period, :time_year, :longitude, :latitude)
   end
 end
