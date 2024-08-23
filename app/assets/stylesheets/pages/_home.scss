@@ -1,7 +1,6 @@
 // Specific CSS for your home-page
 /* Banner styles */
 .banner {
-  background: linear-gradient(135deg, #2d033b, #e5b8f4, white);
   color: #1E1E1E;
   text-align: center;
   padding: 100px 20px;
@@ -66,10 +65,8 @@
   margin-top: 30px;
   align-items: center;
   font-family: 'Nunito', sans-serif;
-  background-color: #f8f8f8;
 }
 .how-it-works {
-  background-color: #f8f8f8;
   padding: 40px 0;
   font-family: 'Nunito', sans-serif;
 }
@@ -78,7 +75,6 @@
   text-align: center;
   width: 30%;
   font-family: 'Nunito', sans-serif;
-  background-color: #f8f8f8;
 }
 
 .circle {
@@ -114,7 +110,6 @@
 }
 
 .footer {
-  background-color: #f8f8f8; /* Matching the background color of .how-steps */
   padding: 40px 0; /* Increased padding to give more space inside the footer */
 }
 
@@ -147,4 +142,8 @@
 
 .nav-link:hover {
   color: #4A4A4A !important; /* Optional: Slightly darker gray on hover */
+}
+
+.howitworks-and-footer {
+  background: linear-gradient(135deg, #2d033b, #e5b8f4, white); //2 div's same gradient
 }
