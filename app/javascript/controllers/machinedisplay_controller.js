@@ -9,8 +9,7 @@ export default class extends Controller {
     users: Array
   }
   connect() {
-    console.log(this.bookingsValue);
-    console.log(this.usersValue);
+    console.log(this.machineValue.id)
   }
   displayDetails() {
     let main = document.getElementById("main");
@@ -28,6 +27,21 @@ export default class extends Controller {
       card.querySelector("#paid").innerHTML = `<strong>${this.machineValue.price * Days}$</strong>`;
       main.appendChild(card);
     })
+  }
+
+  deleteMachine () {
+    if (confirm(`this will delete your ${this.machineValue.name} machine`)){
+      fetch(`/time_machines/${this.machineValue.id}`, {
+        method: "delete",
+        headers: { "Accept": "application/json" }
+      }).then(response => response.json()).then(data => {
+        console.log(data)
+        const alert = document.querySelector("#alert")
+        alert.classList.remove("d-none")
+        alert.innerHTML = data.message;
+        this.element.remove();
+      })
+    }
   }
 
   getusername(user_id) {

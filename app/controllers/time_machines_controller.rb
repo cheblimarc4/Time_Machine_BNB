@@ -1,5 +1,5 @@
 class TimeMachinesController < ApplicationController
-  before_action :set_machine, only: [:show]
+  before_action :set_machine, only: [:show, :destroy]
   def index
     @machines = TimeMachine.all
   end
@@ -15,7 +15,14 @@ class TimeMachinesController < ApplicationController
         lat: @machine.latitude,
         lng: @machine.longitude
       }
+  end
 
+  def destroy
+    @machine.destroy
+    respond_to do |format|
+      msg = { status: "ok", message: "Successfully deleted #{@machine.name.empty? ? "your time machine" : @machine.name}."}
+      format.json { render json: msg }
+    end
   end
 
   def create
@@ -23,7 +30,7 @@ class TimeMachinesController < ApplicationController
     @machine = TimeMachine.new(timemachine_params)
     @machine.owner = @user
     if @machine.save
-      redirect_to root_path
+      redirect_to time_machines_path
     else
       render new, status: :unprocessable_entity
     end
