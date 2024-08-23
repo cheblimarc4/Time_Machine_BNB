@@ -27,7 +27,11 @@ class BookingsController < ApplicationController
   end
 
   def check_user
-    @machine = TimeMachine.find(params[:time_machine_id])
+    if current_user == @machine.owner
+      render json: { errors: "You can not book your own time machine" }, status: :unprocessable_entity
+    else
+      @machine = TimeMachine.find(params[:time_machine_id])
+    end
   end
 
   def set_machine

@@ -1,33 +1,35 @@
 
 <div class="fit-image p-5" data-controller="showallbookings" data-showallbookings-mybookings-value ="<%=@display_list.to_json%>" style="background-image:url(<%= image_path 'new_back.jpg'%>); min-height: 100vh; position:relative">
   <div class="d-flex p-5 justify-content-between">
-  <div class = "container d-inline-flex justify-content-center p-2 flex-wrap form-border-color overflow-scroll" style="width:49%;height:75vh">
-    <%@time_machine.each do |machine| %>
-      <% users =  machine.bookings.map { |booking| booking.user }%>
-      <div class="card m-2" data-controller="machinedisplay" data-machinedisplay-users-value="<%= users.to_json  %>" data-machinedisplay-bookings-value="<%=machine.bookings.to_json%>" data-machinedisplay-machine-value = "<%=machine.to_json%>" data-action="click->machinedisplay#displayDetails" style="width: 18rem;">
-        <% if machine.photo.attached?%>
-          <%= cl_image_tag machine.photo.key, class:"card-img-top"%>
-        <%else%>
-          <img src="https://images.unsplash.com/photo-1591360236494-e6557e5ffa25?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
-        <%end%>
-        <div class="card-body">
-          <h5 class="card-title"><%= machine.name.upcase %></h5>
-          <p class="card-text">This time machine will take you to <strong><%= machine.time_year %></strong> <%= machine.destination%></p>
-        </div>
-
+    <div class="container d-flex flex-column align-items-center form-border-color overflow-scroll justify-content-start" style="width:49%;height:75vh">
+    <h1 class='text-white my-5 fw-bolder' style=""> Your time machines </h1>
+      <div class = "d-inline-flex justify-content-center p-2 flex-wrap">
+        <%@time_machine.each do |machine| %>
+          <% users =  machine.bookings.map { |booking| booking.user }%>
+          <div class="card m-2" data-controller="machinedisplay" data-machinedisplay-users-value="<%= users.to_json  %>" data-machinedisplay-bookings-value="<%=machine.bookings.to_json%>" data-machinedisplay-machine-value = "<%=machine.to_json%>" data-action="click->machinedisplay#displayDetails" style="width: 18rem;">
+            <% if machine.photo.attached?%>
+              <%= cl_image_tag machine.photo.key, class:"card-img-top"%>
+            <%else%>
+              <img src="https://images.unsplash.com/photo-1591360236494-e6557e5ffa25?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
+            <%end%>
+            <div class="card-body">
+              <h5 class="card-title"><%= machine.name.upcase %></h5>
+              <p class="card-text">This time machine will take you to <strong><%= machine.time_year %></strong> <%= machine.destination%></p>
+            </div>
+          </div>
+        <%end %>
       </div>
-    <%end %>
-  </div>
-  <div class="p-5 d-flex flex-column justify-content-center form-border-color align-items-center text-white overflow-scroll" style="width:49%;height:75vh" style="position:sticky" id="main">
+    </div>
+  <div class="d-flex flex-column form-border-color align-items-center px-5 text-white overflow-scroll" style="width:49%;height:75vh" style="position:sticky" id="main">
   </div>
     <button class="btn btn-primary" data-action="click->showallbookings#displayAllBookings">Show All</button>
 </div>
 
 <template id="template">
-  <div class="card-product form-border-color w-100 m-3 text-white p-2 rounded-5">
+  <div class="card-product form-border-color w-100 my-3 text-white rounded-5">
     <div class="card-product-infos">
     </div>
-    <div class= "d-flex justify-content-between align-items-between text-white w-100 p-5">
+    <div class= "d-flex justify-content-between align-items-between text-white p-5">
       <div>
         <p id="machine-name" class="m-0"></p>
       </div>

@@ -14,7 +14,7 @@ export default class extends Controller {
   }
   displayDetails() {
     let main = document.getElementById("main");
-    main.innerHTML = `<h1>${this.machineValue.name}'s bookings`;
+    main.innerHTML = `<h1 class="fw-bolder my-5" >${this.machineValue.name}'s bookings`;
     let template = document.getElementById("template");
     if (this.bookingsValue.length == 0) {
       main.innerHTML += "You dont have any bookings for this machine yet!"
