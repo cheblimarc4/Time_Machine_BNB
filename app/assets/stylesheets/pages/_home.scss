@@ -144,6 +144,34 @@
   color: #4A4A4A !important; /* Optional: Slightly darker gray on hover */
 }
 
-.howitworks-and-footer {
+.banner-howitworks-footer {
   background: linear-gradient(135deg, #2d033b, #e5b8f4, white); //2 div's same gradient
+}
+
+.wave {
+  animation: moveWave 6s infinite ease-in-out;
+}
+
+.wave1 {
+  animation-delay: 0s;
+}
+
+.wave2 {
+  animation-delay: 2s;
+}
+
+.wave3 {
+  animation-delay: 4s;
+}
+
+@keyframes moveWave {
+  0% {
+    d: path("M0 240 C 100 340, 300 140, 500 240 S 700 340, 900 240 S 1100 140, 1300 240 S 1500 340, 1600 240");
+  }
+  50% {
+    d: path("M0 260 C 200 440, 400 160, 600 260 S 800 440, 1000 260 S 1200 160, 1400 260 S 1600 440, 1800 260");
+  }
+  100% {
+    d: path("M0 240 C 100 340, 300 140, 500 240 S 700 340, 900 240 S 1100 140, 1300 240 S 1500 340, 1600 240");
+  }
 }
