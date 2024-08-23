@@ -18,16 +18,17 @@ export default class extends Controller {
     let template = document.getElementById("template");
     if (this.bookingsValue.length == 0) {
       main.innerHTML += "You dont have any bookings for this machine yet!"
+    }else{
+      this.bookingsValue.forEach( (booking) => {
+        let card = template.content.cloneNode(true);
+        card.querySelector("#machine-name").parentNode.remove();
+        card.querySelector("#booker").innerHTML = `<strong> ${ this.getusername(booking.user_id)  }</strong>`;
+        card.querySelector("#dates").innerHTML = `<strong> ${booking.start_date} / ${booking.end_date}</strong>`;
+        const Days = ((Date.parse(booking.end_date) - Date.parse(booking.start_date)) / (60000 * 60 * 24));
+        card.querySelector("#paid").innerHTML = `<strong>${this.machineValue.price * Days}$</strong>`;
+        main.appendChild(card);
+      });
     }
-    this.bookingsValue.forEach( (booking) => {
-      let card = template.content.cloneNode(true);
-      card.querySelector("#machine-name").parentNode.remove();
-      card.querySelector("#booker").innerHTML = `<strong> ${ this.getusername(booking.user_id)  }</strong>`;
-      card.querySelector("#dates").innerHTML = `<strong> ${booking.start_date} / ${booking.end_date}</strong>`;
-      const Days = ((Date.parse(booking.end_date) - Date.parse(booking.start_date)) / (60000 * 60 * 24));
-      card.querySelector("#paid").innerHTML = `<strong>${this.machineValue.price * Days}$</strong>`;
-      main.appendChild(card);
-    })
   }
 
   getusername(user_id) {
