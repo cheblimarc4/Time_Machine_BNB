@@ -10,7 +10,7 @@ export default class extends Controller {
   }
   displayAllBookings(){
     let main = document.getElementById("main");
-    main.innerHTML = `<h1> Your bookings </h1>`;
+    main.innerHTML = `<h1 class="fw-bolder my-5"> Your bookings </h1>`;
     let template = document.getElementById("template");
     if (this.mybookingsValue.length == 0) {
       main.innerHTML += "You dont have any bookings for this machine yet!"
