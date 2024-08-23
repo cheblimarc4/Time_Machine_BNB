@@ -1,18 +1,18 @@
 <div class="fit-image p-5" style="background-image:url(<%= image_path 'new_back.jpg'%>); min-height: 100vh; position:relative">
   <div class = "d-inline-flex p-2 m-4 flex-wrap w-100">
   <%@my_bookings.each do |booking| %>
-    <div class="card m-2" style="width: 18rem;">
+    <div class="card m-2" style="width: 18rem;" data-controller="mine" data-mine-booking-value = "<%= booking.to_json%>">
       <% if booking.time_machine.photo.attached? %>
         <%= cl_image_tag booking.time_machine.photo.key, class:"card-img-top"%>
       <% else %>
         <img src="https://images.unsplash.com/reserve/LJIZlzHgQ7WPSh5KVTCB_Typewriter.jpg?q=80&w=3396&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" , class="card-img-top">
       <% end %>
-      <div class="card-body">
+      <div class="card-body" >
         <h5 class="card-title"><%= booking.time_machine.name %></h5>
         <p class="card-text"><strong>Schedueled from:</strong> <%= booking.start_date.strftime("%d %B") %> <strong>--</strong><%= booking.end_date.strftime("%d %B") %></p>
         <%= link_to "Check Journey Info", time_machine_path(booking.time_machine) , class:"btn btn-primary w-100 mb-2" %>
         <%= link_to "Notify me !", "#", class:"btn btn-primary w-100 mb-2" %>
-        <%= link_to "Cancel booking", "#", class:"btn btn-white w-100 mb-2", style:"background-color: white; border: 1px solid purple; color: purple;" %>
+        <%= link_to "Cancel booking", "#", class:"btn btn-white w-100 mb-2", style:"background-color: white; border: 1px solid purple; color: purple;", data: {action: "click->mine#cancel"} %>
       </div>
     </div>
   <% end %>

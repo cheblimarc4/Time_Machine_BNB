@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
-  has_one_attached :photo
+  has_one_attached :photo, dependent: :destroy
    # A booking belongs to a user.
    belongs_to :user
 
