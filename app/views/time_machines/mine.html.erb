@@ -1,9 +1,10 @@
 
-<div class="fit-image p-5" data-controller="showallbookings" data-showallbookings-mymachines-value ="<%=@time_machine.to_json%>" style="background-image:url(<%= image_path 'new_back.jpg'%>); min-height: 100vh; position:relative">
+<div class="fit-image p-5" data-controller="showallbookings" data-showallbookings-mybookings-value ="<%=@display_list.to_json%>" style="background-image:url(<%= image_path 'new_back.jpg'%>); min-height: 100vh; position:relative">
   <div class="d-flex p-5 justify-content-between">
   <div class = "container d-inline-flex justify-content-center p-2 flex-wrap form-border-color overflow-scroll" style="width:49%;height:75vh">
     <%@time_machine.each do |machine| %>
-      <div class="card m-2" data-controller="machinedisplay" data-machinedisplay-bookings-value = "<%=machine.bookings.to_json%>" data-machinedisplay-machine-value = "<%=machine.to_json%>" data-action="click->machinedisplay#displayDetails" style="width: 18rem;">
+      <% users =  machine.bookings.map { |booking| booking.user }%>
+      <div class="card m-2" data-controller="machinedisplay" data-machinedisplay-users-value="<%= users.to_json  %>" data-machinedisplay-bookings-value="<%=machine.bookings.to_json%>" data-machinedisplay-machine-value = "<%=machine.to_json%>" data-action="click->machinedisplay#displayDetails" style="width: 18rem;">
         <% if machine.photo.attached?%>
           <%= cl_image_tag machine.photo.key, class:"card-img-top"%>
         <%else%>
@@ -11,7 +12,7 @@
         <%end%>
         <div class="card-body">
           <h5 class="card-title"><%= machine.name.upcase %></h5>
-          <%# <p class="card-text">This time machine will take you to <strong><%= machine.time_year</strong> <%= machine.destination</p> %> %>
+          <p class="card-text">This time machine will take you to <strong><%= machine.time_year %></strong> <%= machine.destination%></p>
         </div>
 
       </div>
@@ -19,16 +20,29 @@
   </div>
   <div class="p-5 d-flex flex-column justify-content-center form-border-color align-items-center text-white overflow-scroll" style="width:49%;height:75vh" style="position:sticky" id="main">
   </div>
+    <button class="btn btn-primary" data-action="click->showallbookings#displayAllBookings">Show All</button>
 </div>
 
 <template id="template">
   <div class="card-product form-border-color w-100 m-3 text-white p-2 rounded-5">
     <div class="card-product-infos">
     </div>
-    <div class= "d-flex justify-content-between align-items-center text-white w-100 p-5">
-      <p id="booker" class="m-0"></p>
-      <p id="dates" class="m-0"></p>
-      <p id="paid" class="m-0"></p>
+    <div class= "d-flex justify-content-between align-items-between text-white w-100 p-5">
+      <div>
+        <p id="machine-name" class="m-0"></p>
+      </div>
+      <div>
+        <p>Booked by:</p>
+        <p id="booker" class="m-0"></p>
+      </div>
+      <div>
+        <p>Start Date / End Date </p>
+        <p id="dates" class="m-0"></p>
+      </div>
+      <div>
+        <p> Paid </p>
+        <p id="paid" class="m-0"></p>
+      </div>
     </div>
   </div>
 </template>

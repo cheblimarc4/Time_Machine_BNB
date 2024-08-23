@@ -15,16 +15,15 @@ class TimeMachinesController < ApplicationController
         lat: @machine.latitude,
         lng: @machine.longitude
       }
-      # console.log(@machine.destination)
-      # console.log(@machine.time_period)
-    end
+
+  end
 
   def create
     @user = current_user
     @machine = TimeMachine.new(timemachine_params)
     @machine.owner = @user
     if @machine.save
-      redirect_to time_machines_path
+      redirect_to root_path
     else
       render new, status: :unprocessable_entity
     end
@@ -33,9 +32,24 @@ class TimeMachinesController < ApplicationController
   def mine
     @user = current_user
     @time_machine = @user.owned_time_machines
-    @display_list = @time_machine.map do |machine|
+    @display_list = getbookingslist(@time_machine)
+  end
 
+  def getbookingslist(time_machine)
+    display_list = []
+    time_machine.each do |machine|
+      next unless machine.bookings.length.positive?
+      machine.bookings.each do |booking|
+        display = {}
+        display["start_date"] = booking.start_date
+        display["end_date"] = booking.end_date
+        display["user_name"] = "#{booking.user.first_name} #{booking.user.last_name}"
+        display["machine_name"] = machine.name
+        display["price"] = machine.price
+        display_list.push(display)
+      end
     end
+    return display_list
   end
 
   private

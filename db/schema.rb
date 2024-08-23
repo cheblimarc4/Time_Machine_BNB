@@ -49,7 +49,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_22_105741) do
     t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "buyer_id"
     t.index ["time_machine_id"], name: "index_bookings_on_time_machine_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -89,6 +88,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_22_105741) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "time_machines"
   add_foreign_key "bookings", "users"
-  add_foreign_key "bookings", "users", column: "buyer_id"
   add_foreign_key "time_machines", "users"
 end
