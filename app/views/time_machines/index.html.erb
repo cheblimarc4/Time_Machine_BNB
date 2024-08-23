@@ -11,10 +11,10 @@
       <% end %>
       <div class="card-body">
         <h5 class="card-title"><%= machine.name.upcase %></h5>
-        <p class="card-text">This time machine will take you to the future!</p>
+        <p class="card-text"><strong>Destination :</strong> <%= machine.destination %></p>
+        <p class="card-text"><strong> Year :  <%= machine.time_year %> </strong></p>
         <p class="card-text">Available on: <%= machine.bookings.last ? machine.bookings.last.end_date : Date.today%></p>
         <%= link_to "More Information", time_machine_path(machine), class:"btn btn-primary" %>
-
       </div>
     </div>
   <% end %>

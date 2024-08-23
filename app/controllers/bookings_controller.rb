@@ -15,6 +15,7 @@ class BookingsController < ApplicationController
         format.json { render json: { errors: "You can not leave the dates empty" }, status: :unprocessable_entity }
       end
     end
+
   end
   def mine
     @my_bookings = Booking.where(user: current_user)
@@ -27,7 +28,6 @@ class BookingsController < ApplicationController
 
   def check_user
     @machine = TimeMachine.find(params[:time_machine_id])
-    redirect_to time_machine_path(@machine) if current_user == @machine.owner
   end
 
   def set_machine

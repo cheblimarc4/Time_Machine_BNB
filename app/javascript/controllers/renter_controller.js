@@ -39,6 +39,7 @@ export default class extends Controller {
       this.messageTarget.classList.remove("d-none")
       this.messageTarget.classList.add("alert", "alert-success")
       this.messageTarget.innerHTML = message.message
+      window.location.href = "/bookings/mine";
      }
   }
 
