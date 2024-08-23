@@ -15,7 +15,6 @@ class TimeMachinesController < ApplicationController
         lat: @machine.latitude,
         lng: @machine.longitude
       }
-      # console.log(@marker)
       # console.log(@machine.destination)
       # console.log(@machine.time_period)
     end
@@ -46,6 +45,6 @@ class TimeMachinesController < ApplicationController
   end
 
   def timemachine_params
-    params.require(:time_machine).permit(:name, :size, :price, :speed, :comfort, :photo, :destination, :time_period, :time_year)
+    params.require(:time_machine).permit(:name, :size, :price, :speed, :comfort, :photo, :destination, :time_period, :time_year, :longitude, :latitude)
   end
 end

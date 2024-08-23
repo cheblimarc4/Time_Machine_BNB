@@ -10,13 +10,19 @@ TimeMachine.destroy_all
 User.destroy_all
 
 # Create Users
+
 puts "Creating Users..."
 john = User.create!(
   email: 'john@example.com',
   password: 'password',
   first_name: 'John',
-  last_name: 'Doe'
-)
+  last_name: 'Doe',)
+  john.photo.attach(
+    io: File.open(Rails.root.join("app/assets/images/Avatar1.jpg")),
+    filename: "Avatar1.jpg",
+  )
+  john.save
+
 
 jane = User.create!(
   email: 'jane@example.com',
@@ -24,6 +30,10 @@ jane = User.create!(
   first_name: 'Jane',
   last_name: 'Doe'
 )
+jane.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/Avatar2.jpg")),
+  filename:"Avatar2.jpg")
+  jane.save
 
 alice = User.create!(
   email: 'alice@example.com',
@@ -31,6 +41,10 @@ alice = User.create!(
   first_name: 'Alice',
   last_name: 'Wonder'
 )
+alice.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/Avatar3.jpg")),
+  filename:"Avatar3.jpg")
+  alice.save
 
 bob = User.create!(
   email: 'bob@example.com',
@@ -38,6 +52,10 @@ bob = User.create!(
   first_name: 'Bob',
   last_name: 'Builder'
 )
+bob.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/Avatar4.jpg")),
+  filename:"Avatar4.jpg")
+  bob.save
 
 eve = User.create!(
   email: 'eve@example.com',
@@ -45,6 +63,10 @@ eve = User.create!(
   first_name: 'Eve',
   last_name: 'Adams'
 )
+eve.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/Avatar5.jpg")),
+  filename:"Avatar5.jpg")
+  eve.save
 
 puts "Users created."
 
@@ -61,7 +83,9 @@ time_machines_data = [
     time_year: '2030',
     destination: 'Los Angeles, CA',
     user: john,
-    image: "DALLE1.jpg"
+    image: "DALLE1.jpg",
+    latitude: 34.058730731956324,
+    longitude: -118.246826171875,
   },
   {
     name: 'TARDIS',
@@ -73,7 +97,9 @@ time_machines_data = [
     time_year: '1895',
     destination: 'London, UK',
     user: jane,
-    image: "DALLE2.jpg"
+    image: "DALLE2.jpg",
+    latitude: 51.51058115133612,
+    longitude: -0.10435380158458143,
   },
   {
     name: 'Flux Capacitor',
@@ -85,7 +111,9 @@ time_machines_data = [
     time_year: '???',
     destination: 'New York, NY',
     user: john,
-    image: "DALLE3.jpg"
+    image: "DALLE3.jpg",
+    latitude: 40.712776,
+    longitude: -74.005974,
   },
   {
     name: 'Time Sphere',
@@ -97,7 +125,9 @@ time_machines_data = [
     time_year: '2500 BC',
     destination: 'Cairo, Egypt',
     user: alice,
-    image: "DALLE4.jpg"
+    image: "DALLE4.jpg",
+    latitude: 30.033333,
+    longitude: 31.233334,
   },
   {
     name: 'Chrono Traveler',
@@ -109,7 +139,9 @@ time_machines_data = [
     time_year: '3050',
     destination: 'Tokyo, Japan',
     user: bob,
-    image: "DALLE5.jpg"
+    image: "DALLE5.jpg",
+    latitude: 35.6895,
+    longitude: 139.6917,
   },
   {
     name: 'Time Skimmer',
@@ -121,7 +153,9 @@ time_machines_data = [
     time_year: '100 million BC',
     destination: 'Rio de Janeiro, Brazil',
     user: eve,
-    image: "DALLE6.jpg"
+    image: "DALLE6.jpg",
+    latitude: -22.9068,
+    longitude: -43.1729,
   },
   {
     name: 'Quantum Wheel',
@@ -133,7 +167,9 @@ time_machines_data = [
     time_year: '???',
     destination: 'San Francisco, CA',
     user: john,
-    image: "DALLE7.jpg"
+    image: "DALLE7.jpg",
+    latitude: 37.7749,
+    longitude: -122.4194,
   },
   {
     name: 'Time Slider',
@@ -145,7 +181,9 @@ time_machines_data = [
     time_year: '2024',
     destination: 'Paris, France',
     user: alice,
-    image: "DALLE8.jpg"
+    image: "DALLE8.jpg",
+    latitude: 48.8566,
+    longitude: 2.3522,
   },
   {
     name: 'Chronos Blade',
@@ -157,7 +195,9 @@ time_machines_data = [
     time_year: '1350',
     destination: 'Rome, Italy',
     user: bob,
-    image: "DALLE9.jpg"
+    image: "DALLE9.jpg",
+    latitude: 41.9028,
+    longitude: 12.4964,
   },
   {
     name: 'Temporal Ship',
@@ -169,7 +209,9 @@ time_machines_data = [
     time_year: '2150',
     destination: 'Berlin, Germany',
     user: eve,
-    image: "DALLE10.jpg"
+    image: "DALLE10.jpg",
+    latitude: 52.5200,
+    longitude: 13.4050,
   }
 ]
 

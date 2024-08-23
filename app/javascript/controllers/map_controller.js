@@ -19,9 +19,8 @@ export default class extends Controller {
       zoom: 1,
       style: "mapbox://styles/chebz/cm03z5ig500cy01qw8sz8ayry"
     })
-
     this.#addMarkersToMap()
-    // this.#fitMapToMarkers()
+    this.#fitMapToMarkers()
   }
 
   #addMarkersToMap() {
@@ -30,9 +29,9 @@ export default class extends Controller {
       .setLngLat([ this.markerValue.lng, this.markerValue.lat ])
       .addTo(this.map)
   }
-  // #fitMapToMarkers() {
-  //   const bounds = new mapboxgl.LngLatBounds()
-  //   this.markerValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
-  //   this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
-  // }
+  #fitMapToMarkers() {
+    const bounds = new mapboxgl.LngLatBounds()
+    this.markerValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+  }
 }
