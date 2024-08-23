@@ -43,6 +43,7 @@ export default class extends Controller {
      }
   }
 
+
   hideBooking() {
     this.modalTarget.style.display = "none";
     this.mapboxTarget.classList.remove("d-none")
