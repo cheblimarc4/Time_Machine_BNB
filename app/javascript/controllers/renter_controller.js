@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="renter"
 export default class extends Controller {
-  static targets =["modal", "bookform", "startdate", "enddate", "price", "form", "message", "days", "mapbox"]
+  static targets =["modal", "bookform", "startdate", "enddate", "price", "form", "message", "mapbox"]
   static values = {
     params: Object
   }
@@ -39,6 +39,7 @@ export default class extends Controller {
       this.messageTarget.classList.remove("d-none")
       this.messageTarget.classList.add("alert", "alert-success")
       this.messageTarget.innerHTML = message.message
+      window.location.href = "/bookings/mine";
      }
   }
 

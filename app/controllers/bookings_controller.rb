@@ -15,6 +15,7 @@ class BookingsController < ApplicationController
         format.json { render json: { errors: "You can not leave the dates empty" }, status: :unprocessable_entity }
       end
     end
+
   end
   def mine
     @my_bookings = Booking.where(user: current_user)
